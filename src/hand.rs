@@ -28,6 +28,16 @@ impl Hand {
         Self { cards }
     }
 
+    pub fn new_with_u8(hole1: u8, hole2: u8, board: &[u8; 5]) -> Self {
+        let mut cards = Vec::with_capacity(7);
+        cards.push(Card::from_u8(hole1));
+        cards.push(Card::from_u8(hole2));
+        for card in board {
+            cards.push(Card::from_u8(*card));
+        }
+        Self { cards }
+    }
+
     /// From a str create a new hand.
     ///
     /// # Examples
