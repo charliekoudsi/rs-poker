@@ -1,5 +1,5 @@
-use crate::core::card::Card;
-use crate::core::hand::Hand;
+use crate::card::Card;
+use crate::hand::Hand;
 
 /// All the different possible hand ranks.
 /// For each hand rank the u32 corresponds to
@@ -299,8 +299,8 @@ impl Rankable for Vec<Card> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::core::card::*;
-    use crate::core::hand::*;
+    use crate::card::*;
+    use crate::hand::*;
 
     #[test]
     fn test_keep_highest() {

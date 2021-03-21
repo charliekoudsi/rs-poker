@@ -1,28 +1,32 @@
-//! RS-Poker is a library for poker.
-//! It's mostly meant for Holdem games, however the core functionality
-//! should work for all game types.
-//!
-//! # Implemented:
-//! Currently RS-Poker supports:
-//!
-//! * Hand Iteration.
-//! * Hand Ranking.
-//! * Hand Range parsing.
-//! * Hand Range generation.
-//!
-//! # Planned:
-//! * Holdem Game State.
-//! * Multi-threading
-//!
-#![deny(clippy::all)]
-extern crate rand;
+//! This is the core module. It exports the non-holdem
+//! related code.
 
-/// Allow all the core poker functionality to be used
-/// externally. Everything in core should be agnostic
-/// to poker style.
-pub mod core;
-/// The holdem specific code. This contains range
-/// parsing, game state, and starting hand code.
-pub mod holdem;
+/// card.rs has value and suit.
+mod card;
+/// Re-export Card, Value, and Suit
+pub use self::card::{Card, Suit, Value};
 
-pub mod simulated_icm;
+/// Code related to cards in hands.
+mod hand;
+/// Everything in there should be public.
+pub use self::hand::*;
+
+/// We want to be able to iterate over five card hands.
+mod card_iter;
+/// Make that functionality public.
+pub use self::card_iter::*;
+
+/// Deck is the normal 52 card deck.
+mod deck;
+/// Export `Deck`
+pub use self::deck::Deck;
+
+/// Flattened deck
+mod flat_deck;
+/// Export the trait and the result.
+pub use self::flat_deck::{FlatDeck, Flattenable};
+
+/// 5 Card hand ranking code.
+mod rank;
+/// Export the trait and the results.
+pub use self::rank::{Rank, Rankable};

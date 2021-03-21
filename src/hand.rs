@@ -1,4 +1,4 @@
-use crate::core::card::*;
+use crate::card::*;
 use std::collections::HashSet;
 use std::ops::Index;
 use std::ops::{RangeFrom, RangeFull, RangeTo};
@@ -150,7 +150,7 @@ impl Index<RangeFrom<usize>> for Hand {
 #[cfg(test)]
 mod tests {
     use super::*;
-    use crate::core::card::Card;
+    use crate::card::Card;
 
     #[test]
     fn test_add_card() {

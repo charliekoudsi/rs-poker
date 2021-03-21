@@ -1,5 +1,5 @@
-use crate::core::card::Card;
-use crate::core::deck::Deck;
+use crate::card::Card;
+use crate::deck::Deck;
 use std::ops::{Index, Range, RangeFrom, RangeFull, RangeTo};
 
 extern crate rand;
