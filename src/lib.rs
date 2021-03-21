@@ -30,3 +30,7 @@ pub use self::flat_deck::{FlatDeck, Flattenable};
 mod rank;
 /// Export the trait and the results.
 pub use self::rank::{Rank, Rankable};
+
+// Isomorph code
+mod isomorph;
+pub use self::isomorph::{gen_ranges, Isomorph};
