@@ -248,6 +248,17 @@ impl fmt::Display for Card {
     }
 }
 
+impl Card {
+    pub fn from_u8(val: u8) -> Self {
+        let suit_u8 = val % 4;
+        let val_u8 = (val - suit_u8) / 4;
+        Self {
+            value: Value::from_u8(val_u8),
+            suit: Suit::from_u8(suit_u8),
+        }
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;
