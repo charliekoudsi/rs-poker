@@ -106,7 +106,7 @@ pub trait Rankable {
     ///
     /// # Examples
     /// ```
-    /// use rs_poker::core::{Hand, Rank, Rankable};
+    /// use rs_poker::{Hand, Rank, Rankable};
     ///
     /// let hand = Hand::new_from_str("2h2d8d8sKd6sTh").unwrap();
     /// let rank = hand.rank();

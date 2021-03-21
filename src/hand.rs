@@ -33,14 +33,14 @@ impl Hand {
     /// # Examples
     ///
     /// ```
-    /// use rs_poker::core::Hand;
+    /// use rs_poker::Hand;
     /// let hand = Hand::new_from_str("AdKd").unwrap();
     /// ```
     ///
     /// Anything that can't be parsed will return an error.
     ///
     /// ```
-    /// use rs_poker::core::Hand;
+    /// use rs_poker::Hand;
     /// let hand = Hand::new_from_str("AdKx");
     /// assert!(hand.is_err());
     /// ```

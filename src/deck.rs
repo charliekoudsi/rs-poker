@@ -15,7 +15,7 @@ impl Deck {
     /// Create the default 52 card deck
     ///
     /// ```
-    /// use rs_poker::core::Deck;
+    /// use rs_poker::Deck;
     ///
     /// assert_eq!(52, Deck::default().len());
     /// ```

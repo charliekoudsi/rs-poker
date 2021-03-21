@@ -58,7 +58,7 @@ impl Value {
     /// # Examples
     ///
     /// ```
-    /// use rs_poker::core::Value;
+    /// use rs_poker::Value;
     /// assert_eq!(Value::Four, Value::from_u8(Value::Four as u8));
     /// ```
     #[must_use]
@@ -81,7 +81,7 @@ impl Value {
     /// # Examples
     ///
     /// ```
-    /// use rs_poker::core::Value;
+    /// use rs_poker::Value;
     ///
     /// assert_eq!(Value::Ace, Value::from_char('A').unwrap());
     /// ```
@@ -130,7 +130,7 @@ impl Value {
     /// # Examples
     ///
     /// ```
-    /// use rs_poker::core::Value;
+    /// use rs_poker::Value;
     /// assert_eq!(1, Value::Ace.gap(Value::King));
     /// ```
     #[must_use]
@@ -168,7 +168,7 @@ impl Suit {
     /// # Examples
     ///
     /// ```
-    /// use rs_poker::core::Suit;
+    /// use rs_poker::Suit;
     /// let suits = Suit::suits();
     /// assert_eq!(4, suits.len());
     /// ```
@@ -182,7 +182,7 @@ impl Suit {
     ///
     /// #Examples
     /// ```
-    /// use rs_poker::core::Suit;
+    /// use rs_poker::Suit;
     /// let idx = Suit::Club as u8;
     /// assert_eq!(Suit::Club, Suit::from_u8(idx));
     /// ```
@@ -197,14 +197,14 @@ impl Suit {
     /// # Examples
     ///
     /// ```
-    /// use rs_poker::core::Suit;
+    /// use rs_poker::Suit;
     ///
     /// let s = Suit::from_char('s');
     /// assert_eq!(Some(Suit::Spade), s);
     /// ```
     ///
     /// ```
-    /// use rs_poker::core::Suit;
+    /// use rs_poker::Suit;
     ///
     /// let s = Suit::from_char('X');
     /// assert_eq!(None, s);
