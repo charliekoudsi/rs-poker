@@ -13,6 +13,50 @@ impl Isomorph {
         }
     }
 
+    fn char_to_card(card: char) -> Option<u8> {
+        match card {
+            '2' => Some(0),
+            '3' => Some(1),
+            '4' => Some(2),
+            '5' => Some(3),
+            '6' => Some(4),
+            '7' => Some(5),
+            '8' => Some(6),
+            '9' => Some(7),
+            'T' => Some(8),
+            'J' => Some(9),
+            'Q' => Some(10),
+            'K' => Some(11),
+            'A' => Some(12),
+            _ => None,
+        }
+    }
+
+    fn char_to_suited(suit: char) -> Option<bool> {
+        match suit {
+            's' => Some(true),
+            'o' => Some(false),
+            _ => None,
+        }
+    }
+
+    pub fn new_from_str(hand: &str) -> Option<Self> {
+        let chars: Vec<char> = hand.chars().collect();
+        if chars.len() == 2 {
+            if chars[0] == chars[1] {
+                let card = Isomorph::char_to_card(chars[0])?;
+                return Some(Isomorph::new(card, card, false));
+            }
+            return None;
+        } else if chars.len() == 3 {
+            let suited = Isomorph::char_to_suited(chars[2])?;
+            let card1 = Isomorph::char_to_card(chars[0])?;
+            let card2 = Isomorph::char_to_card(chars[1])?;
+            return Some(Isomorph::new(card1, card2, suited));
+        }
+        return None;
+    }
+
     pub fn gen_combos(&self) -> Vec<(u8, u8)> {
         if self.card1 == self.card2 {
             return Self::gen_pairs(self.card1 * 4);
